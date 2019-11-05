@@ -1,3 +1,3 @@
-rm ~/.bash_profile
-ln -s $(pwd)/.bash_profile ~/.bash_profile
-source ~/.bash_profile
+#!/usr/bin/env bash
+stow -v -R -t ~ bash
+stow -v -R -t ~ git

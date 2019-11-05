@@ -23,33 +23,7 @@ export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PATH="$PATH:$HOME/go/bin:$HOME/.config/composer/vendor/bin/"
-
-#
-# ALIAS
-#
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias cdp="cd $HOME/projects"
-
-alias ls='ls --color=auto'
-alias la='ls -lha'
-alias ll='ls -lh'
-alias cp="cp -i"                          
-alias df='df -h'                          
-alias free='free -m'                      
-alias np='nano -w PKGBUILD'
-alias more=less
-
-alias open='xdg-open'
-alias pacman='sudo pacman'
-alias searchhistory='history | grep '
-alias start='sudo systemctl start'
-alias status='sudo systemctl status'
-alias stop='sudo systemctl stop'
 
 #
 # FUNCTIONS
@@ -76,6 +50,13 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+#########
+# ALIASES
+#
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
 
 #########
 # EXTRA CONF
