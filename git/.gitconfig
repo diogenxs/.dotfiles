@@ -1,3 +1,10 @@
 [user]
     email = diogenes.pelisson@gmail.com
     name = Diogenes Pelisson
+[alias]
+	last = log -1 HEAD
+    unstage = reset HEAD --
+    lg =  log --all --graph --decorate --oneline --abbrev-commit
+    blclean = "!f() { git branch --merged | egrep -v '(master|desenv)' | xargs git branch -d ; }; f"
+    brclean = "!f() { git branch --merged | egrep -v '(master|desenv)' | xargs git push -d origin ; }; f"
+    bclean = !git brclean && blclean

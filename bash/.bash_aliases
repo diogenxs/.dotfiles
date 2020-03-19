@@ -18,3 +18,5 @@ alias searchhistory='history | grep '
 alias start='sudo systemctl start'
 alias status='sudo systemctl status'
 alias stop='sudo systemctl stop'
+
+alias sshconfig="vim $HOME/.ssh/config"

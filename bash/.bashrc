@@ -16,14 +16,14 @@ shopt -s histappend
 #
 # ENV
 #
-PS1='\[\033[1;32m\]\u: \[\033[1;37m\]\[\033[1;31m\]\w\[\033[1;36m\]$(__git_ps1)\[\033[1;33m\] \$  \[\033[0m\]'
+PS1='\[\033[1;32m\]\u: \[\033[1;37m\]\[\033[1;31m\]\W\[\033[1;36m\]$(__git_ps1)\[\033[1;33m\] \$  \[\033[0m\]'
 export VISUAL=vim
 
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
 
-export PATH="$PATH:$HOME/go/bin:$HOME/.config/composer/vendor/bin/"
+export PATH="$PATH:$HOME/go/bin:$HOME/.config/composer/vendor/bin/:$HOME/bin"
 
 #
 # FUNCTIONS
@@ -60,5 +60,5 @@ fi
 
 #########
 # EXTRA CONF
-# load extra file not commited 
-[ -s "$HOME/.env.sh" ] && source $HOME/.env.sh
+# load extra file not commited
+[ -s "$HOME/.env.sh" ] && source "$HOME/.env.sh"
