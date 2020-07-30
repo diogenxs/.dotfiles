@@ -20,3 +20,9 @@ alias status='sudo systemctl status'
 alias stop='sudo systemctl stop'
 
 alias sshconfig="vim $HOME/.ssh/config"
+alias ubuntu="docker run --rm -it ubuntu:latest /bin/bash"
+alias centos="docker run --rm -it centos:latest /bin/bash"
+alias debian="docker run --rm -it debian:latest /bin/bash"
+alias amazonlinux="docker run --rm -it amazonlinux:latest /bin/bash"
+
+alias heredoc=""
