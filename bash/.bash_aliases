@@ -24,5 +24,10 @@ alias ubuntu="docker run --rm -it ubuntu:latest /bin/bash"
 alias centos="docker run --rm -it centos:latest /bin/bash"
 alias debian="docker run --rm -it debian:latest /bin/bash"
 alias amazonlinux="docker run --rm -it amazonlinux:latest /bin/bash"
+alias alpine="docker run --rm -it alpine:latest /bin/ash"
 
 alias heredoc=""
+
+alias k=kubectl
+complete -F __start_kubectl k
+
