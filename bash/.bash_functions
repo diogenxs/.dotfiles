@@ -78,11 +78,17 @@ tf-mv-resource() {
     rm $PWD/terraform.tfstate.*.backup
 }
 
-tf-graph() {
+function tf-graph() {
     TMP_FILE=$(mktemp --suffix=.svg)
     $(which terraform) graph --draw-cycles "$@" | dot -Tsvg > $TMP_FILE && $(which kgraphviewer) $TMP_FILE &
 }
 
-git-ignore() {
-    curl https://www.toptal.com/developers/gitignore/api/$1 > .gitignore
+function eks-kubeconfig() {
+    [[ $# -eq 0 ]] && { echo "Pass the region name..."; return 1; }
+    for i in $(aws eks list-clusters --region="$1" | jq  '.["clusters"][]' | tr -d '"'); 
+    do 
+        aws eks update-kubeconfig --region="$1" --name=$i
+    done
+}
+
 }

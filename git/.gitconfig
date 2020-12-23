@@ -1,10 +1,16 @@
 [user]
-    email = diogenes.pelisson@gmail.com
+    email = diogenes_pelisson@trimble.com
     name = Diogenes Pelisson
 [alias]
-	last = log -1 HEAD
+    last = log -1 HEAD
     unstage = reset HEAD --
     lg =  log --all --graph --decorate --oneline --abbrev-commit
     blclean = "!f() { git branch --merged | egrep -v '(master|desenv)' | xargs git branch -d ; }; f"
     brclean = "!f() { git branch --merged | egrep -v '(master|desenv)' | xargs git push -d origin ; }; f"
     bclean = !git brclean && blclean
+    ig = "!ig() { curl -sSL https://www.toptal.com/developers/gitignore/api/$@ >> .gitignore ;}; ig"
+
+[url "https://invent.kde.org/"]
+	insteadOf = kde:
+[url "ssh://git@invent.kde.org/"]
+	pushInsteadOf = kde:
